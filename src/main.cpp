@@ -1,10 +1,4 @@
 #include <iostream>
-#include <stdlib.h>
-// #include <map>
-// #include <sstream>
-// #include <time.h>
-// #include "../include/permutation.h"
-// #include "../include/solver.h"
 #include "../include/utils.h"
 
 using namespace std;
@@ -28,3 +22,4 @@ int main()
     menu();
     return 0;
 }
+

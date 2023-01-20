@@ -169,7 +169,7 @@ void saveToFile(vector<string> ans, vector<int> nums)
             i++;
         }
         filename += ".txt";
-        ofstream fout("../output/" + filename);
+        ofstream fout("../test/" + filename);
         if (fout.is_open())
         {
             int cnt = ans.size();
@@ -188,7 +188,7 @@ void saveToFile(vector<string> ans, vector<int> nums)
             {
                 fout << "No solution found" << endl;
             }
-            cout << "Successfully saved to \"output\" folder as " << filename << endl;
+            cout << "Successfully saved to \"test\" folder as " << filename << endl;
         }
         else
         {

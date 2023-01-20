@@ -32,18 +32,5 @@ vector<vector<int>> getPermutation(vector<int> &nums)
     vector<bool> visited((int)nums.size(), false);
     vector<int> curr;
     permute(nums, curr, res, visited);
-
-    // checker
-    // for (int i = 0; i < (int)res.size(); i++)
-    // {
-
-    //     // Traverse every column
-    //     for (auto value : res[i])
-    //     {
-    //         cout << value << " ";
-    //     }
-
-    //     cout << '\n';
-    // }
     return res;
 }
