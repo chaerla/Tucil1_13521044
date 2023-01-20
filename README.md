@@ -9,7 +9,7 @@
 
 
 ## How to Compile and Run
-1. Open terminal and clone this repo ``git clone https://github.com/Fatih20/j-for-jadi.git``
+1. Open terminal and clone this repo ``git clone https://github.com/chaerla/Tucil1_13521044.git``
 2. Compile and run by running this command. Windows: ``./run.bat``, Linux: ``./run.sh``
 
 ## How to Run without Re-compiling
