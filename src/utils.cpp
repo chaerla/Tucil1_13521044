@@ -8,9 +8,10 @@
 using namespace std;
 using namespace std::chrono;
 
+map<string, int> toInt{{"A", 1}, {"2", 2}, {"3", 3}, {"4", 4}, {"5", 5}, {"6", 6}, {"7", 7}, {"8", 8}, {"9", 9}, {"10", 10}, {"J", 11}, {"Q", 12}, {"K", 13}};
+
 vector<int> getInput()
 {
-    map<string, int> toInt{{"A", 1}, {"2", 2}, {"3", 3}, {"4", 4}, {"5", 5}, {"6", 6}, {"7", 7}, {"8", 8}, {"9", 9}, {"10", 10}, {"J", 11}, {"Q", 12}, {"K", 13}};
     cout << endl;
     cout << "Input 4 cards (integers 2-9, A, J, K, Q) separated by space." << endl;
     cout << "e. g. \"A J 3 4\"." << endl;
@@ -51,23 +52,13 @@ vector<int> randomizeCards()
     {
         int num = rand() % 13 + 1;
         nums.push_back(num);
-        switch (num)
+        for (auto it = toInt.begin(); it != toInt.end(); it++)
         {
-        case 1:
-            cout << "A ";
-            break;
-        case 11:
-            cout << "J ";
-            break;
-        case 12:
-            cout << "Q ";
-            break;
-        case 13:
-            cout << "K ";
-            break;
-        default:
-            cout << num << " ";
-            break;
+            if (it->second == num)
+            {
+                cout << it->first << " ";
+                break;
+            }
         }
     }
     cout << endl;
@@ -160,13 +151,22 @@ void saveToFile(vector<string> ans, vector<int> nums)
     else if (option == "Y" || option == "y")
     {
         string filename = "";
+        int i = 0;
         for (auto n : nums)
         {
-            filename += to_string(n);
-            if (n != nums.back())
+            for (auto it = toInt.begin(); it != toInt.end(); it++)
+            {
+                if (it->second == n)
+                {
+                    filename += it->first;
+                    break;
+                }
+            }
+            if (i != 3)
             {
                 filename += "_";
             }
+            i++;
         }
         filename += ".txt";
         ofstream fout("../output/" + filename);
