@@ -1,9 +1,0 @@
-8 solutions found!
-Solution #1: 12/((6-1)/10)
-Solution #2: (12/(6-1))*10
-Solution #3: 12*(10/(6-1))
-Solution #4: (12*10)/(6-1)
-Solution #5: 10*(12/(6-1))
-Solution #6: (10*12)/(6-1)
-Solution #7: 10/((6-1)/12)
-Solution #8: (10/(6-1))*12

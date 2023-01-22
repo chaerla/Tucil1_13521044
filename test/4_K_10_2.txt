@@ -1,0 +1,17 @@
+16 solutions found!
+Solution #1: 2*(4*(13-10))
+Solution #2: (2*4)*(13-10)
+Solution #3: (2*(4+13))-10
+Solution #4: (2*(13+4))-10
+Solution #5: 2*((13-10)*4)
+Solution #6: (2*(13-10))*4
+Solution #7: 4*(2*(13-10))
+Solution #8: (4*2)*(13-10)
+Solution #9: ((4+13)*2)-10
+Solution #10: 4*((13-10)*2)
+Solution #11: (4*(13-10))*2
+Solution #12: ((13+4)*2)-10
+Solution #13: (13-10)*(2*4)
+Solution #14: ((13-10)*2)*4
+Solution #15: (13-10)*(4*2)
+Solution #16: ((13-10)*4)*2

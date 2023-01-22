@@ -31,6 +31,12 @@ vector<vector<int>> getPermutation(vector<int> &nums)
     vector<vector<int>> res;
     vector<bool> visited((int)nums.size(), false);
     vector<int> curr;
+    // sort the array -- preprocess
+    int i, j;
+    for (i = 0; i < nums.size() - 1; i++)
+        for (j = 0; j < nums.size() - i - 1; j++)
+            if (nums[j] > nums[j + 1])
+                swap(nums[j], nums[j + 1]);
     permute(nums, curr, res, visited);
     return res;
 }
