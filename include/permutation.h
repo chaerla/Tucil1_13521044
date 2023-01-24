@@ -1,14 +1,12 @@
 #ifndef __PERMUTATION__
 #define __PERMUTATION_H__
 
-#include <utility>
 #include <string>
+#include <set>
 #include <vector>
 
 using namespace std;
 
-void permute(vector<int> &arr, vector<int> &curr, vector<vector<int>> &res, vector<bool> &visited);
-
-vector<vector<int>> getPermutation(vector<int> &arr);
+void permute(vector<int> arr, int l, int r, set<vector<int>> &permutations);
 
 #endif

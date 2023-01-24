@@ -77,8 +77,9 @@ vector<pair<float, string>> solve(vector<int> arr)
 vector<string> solveAll(vector<int> input)
 {
     vector<string> ret;
-    vector<vector<int>> nums = getPermutation(input);
-    for (auto n : nums)
+    set<vector<int>> permutations;
+    permute(input, 0, input.size() - 1, permutations);
+    for (auto n : permutations)
     {
         vector<pair<float, string>> ans = solve(n);
         for (auto i : ans)

@@ -1,42 +1,19 @@
 #include "../include/permutation.h"
 #include <iostream>
 
-void permute(vector<int> &arr, vector<int> &curr, vector<vector<int>> &res, vector<bool> &visited)
+void permute(vector<int> arr, int l, int r, set<vector<int>> &permutations)
 {
-    if (curr.size() == arr.size())
+    if (l == r)
     {
-        res.push_back(curr);
+        permutations.insert(arr);
     }
-
-    for (int i = 0; i < arr.size(); i++)
+    else
     {
-
-        if (visited[i] || (i > 0 && arr[i] == arr[i - 1] && !visited[i - 1]))
-            continue;
-
-        visited[i] = true;
-
-        curr.push_back(arr[i]);
-
-        permute(arr, curr, res, visited);
-
-        visited[i] = false;
-
-        curr.pop_back();
+        for (int i = l; i <= r; i++)
+        {
+            swap(arr[l], arr[i]);
+            permute(arr, l + 1, r, permutations);
+            swap(arr[l], arr[i]);
+        }
     }
-}
-
-vector<vector<int>> getPermutation(vector<int> &nums)
-{
-    vector<vector<int>> res;
-    vector<bool> visited((int)nums.size(), false);
-    vector<int> curr;
-    // sort the array -- preprocess
-    int i, j;
-    for (i = 0; i < nums.size() - 1; i++)
-        for (j = 0; j < nums.size() - i - 1; j++)
-            if (nums[j] > nums[j + 1])
-                swap(nums[j], nums[j + 1]);
-    permute(nums, curr, res, visited);
-    return res;
 }
